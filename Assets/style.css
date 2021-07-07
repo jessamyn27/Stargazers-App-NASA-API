@@ -8,17 +8,23 @@
     
     body {
         margin: auto;
+        background: src="./"
     }
     
     main {
         margin-left: 20px;
         margin-right: 20px;
+        z-index: 999999;
+    }
+    
+    header {
+        z-index: 999999;
     }
     
     header div h1 {
         padding: 60px;
         text-align: center;
-        background: #1abc9c;
+        background: rgb(55, 209, 178, .5);
         color: white;
         font-size: 30p;
     }
@@ -42,4 +48,14 @@
     
     #geoList {
         border: 1px solid grey;
+    }
+    
+    #image {
+        object-fit: cover;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -100;
     }
