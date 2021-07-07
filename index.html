@@ -6,10 +6,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="./Assets/style.css">
+
 </head>
 
 <body>
+    <header>
+        <div>
+            <h1 class="title is-1">Stargazer</h1>
+        </div>
+    </header>
 
+    <main>
+        <!-- input and search -->
+        <div id="userInput">
+            <input class="input" type="text" placeholder="Rounded input">
+            <span class="control">
+                <button class="button is-primary">Submit</button>
+            </span>
+        </div>
+
+        <!-- all three columns container -->
+        <div class="columns is-mobile">
+
+            <!-- geolocation info API -->
+            <div class="column" id="astroInfo">
+                <h2 class="title is-2"> Astro Info</h2>
+                <div id="textarea" class="column">
+                    <ul id="geoList">
+                        <li>
+
+                        </li>sunset: </ul>
+                </div>
+            </div>
+
+            <!-- nasa image of the day info API -->
+            <div class="column" id="nasaImage">
+                <h2 class="title is-2"> Nasa Image of the Day </h2>
+                <img id="image" src="./Assets/51189669328_bf2f1fc18f_o.jpeg" alt="Nasa Image of the Day" width="500" height="800">
+            </div>
+
+            <!-- skymap constellations info WIDGET -->
+            <div class="column" id="skyMap">
+                <h2 class="title is-2"> Sky Map </h2>
+                <div id="av-skymap">
+                    <script>
+                        var avSkymapProperties = {
+                            location: {
+                                lon: -73.986,
+                                lat: 40.748,
+                                name: 'New York City',
+                                tz: 'America/New_York'
+                            },
+                            deco: 16399,
+                            size: 200,
+                            lang: 'en'
+                        };
+                    </script>
+
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="https://astroviewer.net/widgets/widgets/skymap.js"></script>
+    <script src="./Assets/script.js"></script>
 </body>
 
 </html>
