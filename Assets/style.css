@@ -1,0 +1,45 @@
+    @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+    /* <h1 class="title is-1">Title 1</h1>
+    <h2 class="title is-2">Title 2</h2>
+    <h3 class="title is-3">Title 3</h3>
+    <h4 class="title is-4">Title 4</h4>
+    <h5 class="title is-5">Title 5</h5>
+    <h6 class="title is-6">Title 6</h6> */
+    
+    body {
+        margin: auto;
+    }
+    
+    main {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    header div h1 {
+        padding: 60px;
+        text-align: center;
+        background: #1abc9c;
+        color: white;
+        font-size: 30p;
+    }
+    
+    input {
+        max-width: 28% !important;
+    }
+    
+    #textarea {
+        border: 2px solid black;
+        min-height: 600px;
+    }
+    
+    #userInput {
+        text-align: center;
+        max-height: 200px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+    
+    #geoList {
+        border: 1px solid grey;
+    }
