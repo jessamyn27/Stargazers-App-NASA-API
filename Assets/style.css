@@ -8,29 +8,48 @@
     
     body {
         margin: auto;
-        background: src="./"
+        font-family: 'Zen Dots', cursive;
+        /* z-index: 999; */
     }
+    /* .background-black {
+        background-color: black;
+        z-index: 1;
+    } */
     
     main {
-        margin-left: 20px;
-        margin-right: 20px;
-        z-index: 999999;
+        padding-left: 20px;
+        padding-right: 20px;
+        z-index: 9999;
+        text-align: center;
+        /* background: rgba(22, 23, 23, .2); */
     }
     
     header {
-        z-index: 999999;
+        z-index: 9999;
     }
     
-    header div h1 {
-        padding: 60px;
+    header h1 {
+        padding: 30px 0 15px 0;
         text-align: center;
-        background: rgb(55, 209, 178, .5);
-        color: white;
-        font-size: 30p;
+        color: rgba(255, 255, 255, .3) !important;
+        font-size: 100px !important;
+        background-color: transparent;
+        z-index: 9999;
+    }
+    
+    h2 {
+        padding: 20px;
+        text-align: center;
+        color: white !important;
+        font-size: 40px !important;
     }
     
     input {
-        max-width: 28% !important;
+        max-width: 40% !important;
+        background: transparent !important;
+        border: 1px solid rgba(0, 0, 0, 0.311);
+        border-radius: 4px;
+        color: #363636;
     }
     
     #textarea {
@@ -52,10 +71,52 @@
     
     #image {
         object-fit: cover;
-        width: 100vw;
-        height: 100vh;
+        width: 120%;
+        height: 140%;
         position: fixed;
-        top: 0;
-        left: 0;
+        top: -200px;
+        left: -154px;
         z-index: -100;
+        /* background-size: 1000% 1000%; */
+    }
+    
+    #skymap-iframe {
+        /* background: rgb(9, 9, 9) !important; */
+        border: 30px solid rgb(10, 10, 10, 10%) !important;
+        border-radius: 50%;
+        width: 600px !important;
+        height: 600px !important;
+    }
+    
+    #av-skymap {
+        /* background: rgb(9, 9, 9) !important;
+        border: 30px solid rgb(26, 21, 21) !important;
+        border-radius: 1000px; */
+    }
+    
+    @media screen and (max-width: 1300px) and (min-width: 801px) {
+        #image {
+            width: 120%;
+            height: 140%;
+            top: -200px;
+            left: -70px;
+        }
+    }
+    
+    @media screen and (max-width: 800px) and (min-width: 401px) {
+        #image {
+            width: 117%;
+            height: 154%;
+            top: -200px;
+            left: -70px;
+        }
+    }
+    
+    @media screen and (max-width: 400px) {
+        #image {
+            width: 244%;
+            height: 130%;
+            top: -155px;
+            left: -70px;
+        }
     }
