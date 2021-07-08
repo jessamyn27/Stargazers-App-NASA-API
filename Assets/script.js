@@ -17,17 +17,17 @@ function getNasaAPI() {
         .then(function(data) {
             console.log('Fetch Response \n-------------');
             console.log(data);
-            var videoId = 'ix1lzur2QLQ?rel=0'
-            var urlOfTheDayVideo = data.url + "?&autoplay=1&background=1&loop=1&playlist='";
+            var videoId = 'ix1lzur2QLQ?'
+            var urlOfTheDayVideo = data.url + "?&autoplay=1&background=1&loop=1&playlist=''";
             var urlOfTheDayImg = data.url
             var mediaType = data.media_type
 
             if (mediaType === "video") {
-                nasaImage.append("<iframe id=image src=" + urlOfTheDayVideo + " alt=Nasa Image of the Day allow='autoplay; fullscreen' ></iframe>")
+                nasaImage.append("<iframe id=image src=" + urlOfTheDayVideo + " alt=Nasa Image of the Day allow='autoplay; fullscreen' allowfullscreen ></iframe>")
             } else {
                 nasaImage.append("<img id=image src=" + urlOfTheDayImg + " alt=Nasa Image of the Day >")
             }
-
+            //https://www.youtube.com/embed/ix1lzur2QLQ?rel=0
             //nasaImage.append("<img id=image src=" + urlOfTheDayImg + " alt=Nasa Image of the Day >")
             //nasaImage.append("<img id=image src=https://api.nasa.gov/planetary/apod?date=2021-07-06&api_key=e7G5azfeRqHQXvk3XlZgcL9yfcSQ7kPQCub0Ech6 >")
         });
@@ -35,11 +35,8 @@ function getNasaAPI() {
 
 getNasaAPI();
 
-
-
-
-
-
+// list of closest astroids from NASA
+var astroidData = 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2021-07-02&end_date=2021-07-08&api_key=e7G5azfeRqHQXvk3XlZgcL9yfcSQ7kPQCub0Ech6'
 
 
 
