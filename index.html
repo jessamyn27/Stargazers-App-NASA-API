@@ -11,78 +11,71 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Assets/style.css">
-
+    <title>Stargazers</title>
 </head>
 
 <body>
     <div class="background-black">
         <header>
-
             <h1 class="title is-1">Stargazers</h1>
-
         </header>
-
         <!-- NASA IMAGE OR PHOTO CONTAINER -->
         <div class="level" id="nasaImage">
         </div>
-
         <main class="container">
-
             <!-- INPUT AND SEARCH CONTAINER -->
             <div class="is-mobile">
-                <div class="" id="userInput">
-                    <input class="" type="text" placeholder="enter your city to gaze the stars">
+                <div class="" id="">
+                    <input id="userInput" class="" type="text" placeholder="enter your city to gaze the stars">
                     <span class="control">
-                <button class="button is-primary">Submit</button>
+                <button id="searchBtn" class="button is-primary">Submit</button>
                 </span>
                 </div>
             </div>
-
             <!-- SKYMAP CONSTELLATION WIDGET -->
             <div class="is-mobile">
                 <h2 class="title is-2"> Sky Map </h2>
-
                 <div class="" id="skyMap">
-                    <div id="av-skymap">
-                        <script>
+                    <div id=av-skymap>
+                        <!-- <a href="https://astroviewer.net/widgets/widgets/skymap.js">
+                            <img src="https://astroviewer.net/av/widgets/skymap-av4-widget.php?lon=-73.986&lat=40.748&deco=16399&lang=en&size=500" width="500" height="500">
+                        </a> -->
+                        <!-- <iframe id="skymap-iframe" src="https://astroviewer.net/av/widgets/skymap-av4-widget.php?lon=-73.986&amp;lat=40.748&amp;deco=16399&amp;lang=en&amp;size=600&amp;name=New%20York%20City&amp;tz=America%2FNew_York" width="600" height="690" sandbox="allow-scripts allow-popups"
+                            scrolling="no" style="overflow:hidden; border: 1px solid #ccc;"></iframe> -->
+                        <!-- <script>
                             var avSkymapProperties = {
                                 location: {
-                                    lon: -73.986,
-                                    lat: 40.748,
-                                    name: 'New York City',
+                                    lon: " + data.location.longitude + ",
+                                    lat: " + data.location.latitude + ",
+                                    name: 'anywhere',
                                     tz: 'America/New_York'
                                 },
                                 deco: 16399,
                                 size: 600,
                                 lang: 'en'
                             };
-                        </script>
+                        </script> -->
                     </div>
                 </div>
             </div>
-
             <!-- geolocation info API -->
             <div class="is-mobile">
                 <div class="" id="astroInfo">
                     <h2 class="title is-2"> Astro Info</h2>
                     <div id="textarea" class="column">
                         <ul id="geoList">
-                            <li>
-                            </li>sunset: </ul>
                     </div>
                 </div>
             </div>
-
         </main>
     </div>
     <!-- ---------- SCRIPTS ----------- -->
-
     <!-- jquery  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <!-- constellation widget -->
-    <script src="https://astroviewer.net/widgets/widgets/skymap.js"></script>
-
+    <div id="widgetDiv">
+        <!-- <script src="https://astroviewer.net/widgets/widgets/skymap.js"></script> -->
+    </div>
     <!-- our javascript -->
     <script src="./Assets/script.js"></script>
 </body>
