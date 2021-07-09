@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "gulp-git": "^2.10.1"
+  }
+}
