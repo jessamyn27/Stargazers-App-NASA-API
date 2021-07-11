@@ -167,7 +167,7 @@ function getNasaDailyAPI() {
                 function display() {
                     galleryArr = checkLocalStorage();
                     $.each(galleryArr, function(i) {
-                        $('#gallery').append("<div class=galleryPhoto ><img class=dailyImage column is-one-fourth src=" + galleryArr[i] + "></div>")
+                        $('#gallery').append("<div class=galleryPhoto ><img class=dailyImage column is-one-fourth src=" + galleryArr[i] + "></div>");
                     })
                 }
 
