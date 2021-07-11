@@ -40,7 +40,7 @@ function getNasaVideoAPI() {
 //call NASA video function
 getNasaVideoAPI();
 
-// ------------------ NASA Astroids Near Earth API -------------------------------------------------------------------------------
+// ------------------ NASA Asteroids Near Earth API -------------------------------------------------------------------------------
 
 function getNasaAstroidAPI() {
     fetch(requestURLAstroidData)
@@ -48,7 +48,7 @@ function getNasaAstroidAPI() {
             return response.json();
         })
         .then(function(data) {
-            console.log('Fetch Response Nasa ASTROID API \n-------------');
+            console.log('Fetch Response Nasa ASTEROID API \n-------------');
             console.log(data);
             var dailyAstroidList = data.near_earth_objects['2021-07-12']
 
@@ -65,10 +65,10 @@ function getNasaAstroidAPI() {
                 console.log(dailyAstroidHazardous)
                 console.log(dailyAstroidSentry)
             }
-            $('#astroidList').append("<li> Astroid Maximum Diameter: " + dailyAstroidDiameter + "</li>");
-            $('#astroidList').append("<li> Astroid Distance From Earth: " + dailyAstroidMissDistance + "</li>");
-            $('#astroidList').append("<li> Astroid Potentially Hazardous:" + dailyAstroidHazardous + "</li>");
-            $('#astroidList').append("<li> Astroid is a Sentry Object: " + dailyAstroidSentry + "</li>");
+            $('#astroidList').append("<li> Asteroid Maximum Diameter: " + dailyAstroidDiameter + "</li>");
+            $('#astroidList').append("<li> Asteroid Distance From Earth: " + dailyAstroidMissDistance + "</li>");
+            $('#astroidList').append("<li> Asteroid Potentially Hazardous:" + dailyAstroidHazardous + "</li>");
+            $('#astroidList').append("<li> Asteroid is a Sentry Object: " + dailyAstroidSentry + "</li>");
 
             console.log(dailyAstroidDiameter + ' daily astroid')
 

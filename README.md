@@ -50,14 +50,14 @@ https://user-images.githubusercontent.com/81654878/125207431-f70d3b80-e251-11eb-
 ## Next Steps to Continue
 ### Improvements to App UI and Functionality aka Nice To Have
 
-- hover and click IU could use color or highlight change
-- convert Astroid distance data from Kilometers to Miles
-- limit to data of only 3 integers past the decimal
-- maybe a video gallery seperate from image gallery 
-- playlist of multiple videos in background on a loop
-- button that let's user add video or image as background?
-- perhaps dynamically add to background playlist from a video library of favorites
-- save or download favorite constellations from city search
+- hover and click IU could use color or highlight change.
+- convert Asteroid distance data from Kilometers to Miles.
+- limit to data of only 3 integers past the decimal.
+- maybe a video gallery separate from image gallery.
+- playlist of multiple videos in background on a loop.
+- button that lets user add video or image as background?
+- perhaps dynamically add to background playlist from a video library of favorites.
+- save or download favorite constellations from city search.
 
 ## SudoCode of Acceptance Criteria
 
