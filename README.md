@@ -22,15 +22,15 @@
 
 ## First Looks
 
-# ![](screenshot-1.png)
-# ![](screenshot-2.png)
-# ![](screenshot-3.png)
-# ![](screenshot-4.png)
-# ![](screenshot-5.png)
+# ![](Assets/screenshot-1.png)
+# ![](Assets/screenshot-2.png)
+# ![](Assets/screenshot-3.png)
+# ![](Assets/screenshot-4.png)
+# ![](Assets/screenshot-5.png)
 
 ## Wireframes
 
-# ![](screenshot-6.png)
+# ![](Assets/screenshot-6.png)
 
 ## Bugs and Known Issues
 
