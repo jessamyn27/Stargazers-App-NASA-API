@@ -1,7 +1,6 @@
 // global html variables
 var skyMap = $('#skyMap');
 var userInput = document.getElementById('userInput');
-//var inputValue = userInput.value;
 var searchBtn = document.getElementById('searchBtn');
 var saveBtn = document.getElementById('saveBtn');
 var widgetDiv = document.getElementById('widgetDiv');
@@ -41,7 +40,6 @@ function getNasaVideoAPI() {
 //call NASA video function
 getNasaVideoAPI();
 
-
 // ------------------ NASA Astroids Near Earth API -------------------------------------------------------------------------------
 
 function getNasaAstroidAPI() {
@@ -66,32 +64,20 @@ function getNasaAstroidAPI() {
                 console.log(dailyAstroidMissDistance)
                 console.log(dailyAstroidHazardous)
                 console.log(dailyAstroidSentry)
-
-
             }
-
             $('#astroidList').append("<li> Astroid Maximum Diameter: " + dailyAstroidDiameter + "</li>");
             $('#astroidList').append("<li> Astroid Distance From Earth: " + dailyAstroidMissDistance + "</li>");
             $('#astroidList').append("<li> Astroid Potentially Hazardous:" + dailyAstroidHazardous + "</li>");
             $('#astroidList').append("<li> Astroid is a Sentry Object: " + dailyAstroidSentry + "</li>");
 
-            // var astroidArr = dailyAstroid;
             console.log(dailyAstroidDiameter + ' daily astroid')
-
-
-
-            // console.log(dailyAstroid)
-
-            // $('#geoList').append("<li> Sunrise " + sunriseTimeValue + "</li>");
 
         });
 }
 //call NASA video function
 getNasaAstroidAPI();
 
-
 // ------------------ NASA daily image API -------------------------------------------------------------------------------
-
 function getNasaDailyAPI() {
     fetch(requestUrlNasaDailyImage)
         .then(function(response) {
@@ -110,7 +96,6 @@ function getNasaDailyAPI() {
             for (var i = 0; i < galleryArr.length; i++) {
                 $('#gallery').append("<div class=galleryPhoto ><img class=dailyImage column is-one-fourth src=" + galleryArr[i] + "></div>")
             }
-
             // check if image of the day is image or video then append iframe or img src to page
             if (mediaType === 'video') {
                 $('#dailyImgContainer').append("<iframe class=dailyVideo src=" + urlOfTheDayVideo + "alt=Nasa Image of the Day allow=autoplay; fullscreen ></iframe>");
@@ -118,21 +103,10 @@ function getNasaDailyAPI() {
                 $('#dailyImgContainer').append("<img class=dailyImage src=" + urlOfTheDayImg + ">");
             }
 
-
             didYouKnowBtn.addEventListener('click', function() {
                 dailyDesc.style.display = "block";
-                // if (dailyDesc.style.cssText = "display:none") {
-                //     dailyDesc.style.cssText = "display:block";
 
-                // } else if (dailyDesc.style.cssText = "display:block") {
-                //     dailyDesc.style.cssText = "display:none";
-                // } else {
-                //     return
-                // }
             })
-
-
-
             saveBtn.addEventListener('click', function() {
                 // clear out the gallery then add in the new image to the array (that will be in storage)
                 $('#gallery').empty();
@@ -170,25 +144,14 @@ function getNasaDailyAPI() {
                         $('#gallery').append("<div class=galleryPhoto ><img class=dailyImage column is-one-fourth src=" + galleryArr[i] + "></div>");
                     })
                 }
-
                 saveLocalStorage();
                 display();
-
-                // if (mediaType === 'video') {
-                //     $('#gallery').append("<iframe class='photo column is-one-fifth' src=" + urlOfTheDayVideo + "alt=Nasa Image of the Day allow=autoplay; fullscreen ></iframe>");
-                // } else {
-                //     $('#gallery').append("<img class='image column is-one-fifth' src=" + urlOfTheDayImg + ">");
-                // }
-                // $('#gallery').append("<img id=galleryImg src=" + urlOfTheDayImg + ">")
             })
         });
 }
 // call NASA daily api function
 getNasaDailyAPI();
-
 // ------------------ GeoLocator API -------------------------------------------------------------------------------
-
-
 function getGeoApi(city) {
     var requestUrl = "https://api.ipgeolocation.io/astronomy?apiKey=09dd26af9aa84c3394026291a5438b9b&location=" + city;
     fetch(requestUrl)
@@ -306,7 +269,6 @@ function getGeoApi(city) {
             $('#geoList').append("<li> Sun Distance " + data.sun_distance + " km</li>");
             $('#geoList').append("<li> Moon Distance " + data.moon_distance + " km</li>");
             geoList.style.cssText = "background-color:rgba(0,0,0,.8)";
-
         })
 }
 // ----------------------------- skymap widget --------------------------------------
