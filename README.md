@@ -1,4 +1,4 @@
-# Project-One-Utilizing-Third-Party-APIs - Stargazers
+# Stargazers-App-NASA-API
 ### Group Project utilizing Three 3rd-Party RESTful APIs, 3rd Party Widget, Bulma front-end css library, javascript, css and html
 
 ## Table of Contents
@@ -16,7 +16,7 @@
 
 ## Quick Links
 
-- click here to view --> [final website](https://jessamyn27.github.io/Project-One-Utilizing-Third-Party-APIs/)
+- click here to view --> [final website](https://jessamyn27.github.io/Stargazers-App-NASA-API/)
 
 - click here to view --> [README GUIDE from UT](https://github.com/the-Coding-Boot-Camp-at-UT/UTA-VIRT-FSF-FT-06-2021-U-LOL/blob/master/01-HTML-Git-CSS/02-Homework/Homework-Guide/README.md)
 
@@ -159,7 +159,7 @@ You are required to submit BOTH of the following for review:
 [MIT License](https://opensource.org/licenses/MIT)
 
 
-**[Back Up To Top](#Project-One-Utilizing-Third-Party-APIs---Stargazers)**
+**[Back Up To Top](#Stargazers-App-NASA-API)**
 
 
 
