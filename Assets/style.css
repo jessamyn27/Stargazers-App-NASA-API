@@ -1,12 +1,4 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
-
-/* <h1 class="title is-1">Title 1</h1>
-<h2 class="title is-2">Title 2</h2>
-<h3 class="title is-3">Title 3</h3>
-<h4 class="title is-4">Title 4</h4>
-<h5 class="title is-5">Title 5</h5>
-<h6 class="title is-6">Title 6</h6> */
-
 body {
     margin: auto;
     font-family: 'Zen Dots', cursive;
@@ -116,7 +108,6 @@ button.button.is-primary:hover {
     border-radius: 20px;
     padding: 20px 10px;
     min-height: 795px;
-    /* width: 150%; */
 }
 
 #dailyImgContainer {
@@ -128,7 +119,6 @@ button.button.is-primary:hover {
 }
 
 #dailyTitle {
-    /* background-color: rgba(0, 0, 0, .8); */
     font-size: 20px;
     color: white;
     border: none;
@@ -145,15 +135,9 @@ button.button.is-primary:hover {
 
 .dailyImage,
 .dailyPhoto {
-    /* object-fit: cover; */
     width: 100%;
     height: 100%;
     z-index: 9999;
-    /* position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -100; */
-    /* background-size: 1000% 1000%; */
 }
 
 #skymap-iframe {
@@ -161,12 +145,6 @@ button.button.is-primary:hover {
     border-radius: 50%;
     width: 600px !important;
     height: 600px !important;
-}
-
-#av-skymap {
-    /* background: rgb(9, 9, 9) !important;
-    border: 30px solid rgb(26, 21, 21) !important;
-    border-radius: 1000px; */
 }
 
 #gallery {
@@ -188,11 +166,8 @@ button.button.is-primary:hover {
     top: -5px;
     left: -800px;
     z-index: -100;
-    /* background-size: 1000% 1000%; */
 }
 
-
-}
 @media screen and (max-width: 1300px) and (min-width: 901px) {
     #backgroundVideo {
         width: 200%;
@@ -200,11 +175,11 @@ button.button.is-primary:hover {
         top: -175px;
         left: -700px;
     }
-    
     header h1 {
         font-size: 90px !important;
     }
 }
+
 @media screen and (max-width: 900px) and (min-width: 401px) {
     #backgroundVideo {
         width: 350%;
@@ -212,11 +187,11 @@ button.button.is-primary:hover {
         top: -175px;
         left: -800px;
     }
-    
     header h1 {
         font-size: 50px !important;
     }
 }
+
 @media screen and (max-width: 400px) {
     #backgroundVideo {
         width: 600%;
@@ -224,7 +199,6 @@ button.button.is-primary:hover {
         top: -175px;
         left: -600px;
     }
-    
     header h1 {
         font-size: 30px !important;
     }
