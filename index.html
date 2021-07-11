@@ -15,67 +15,120 @@
 </head>
 
 <body>
-    <div class="background-black">
-        <header>
-            <h1 class="title is-1">Stargazers</h1>
-        </header>
-        <!-- NASA IMAGE OR PHOTO CONTAINER -->
-        <div class="level" id="nasaImage">
-        </div>
-        <main class="container">
-            <!-- INPUT AND SEARCH CONTAINER -->
-            <div class="is-mobile">
-                <div class="" id="">
-                    <input id="userInput" class="" type="text" placeholder="enter your city to gaze the stars">
-                    <span class="control">
-                <button id="searchBtn" class="button is-primary">Submit</button>
-                </span>
-                </div>
-            </div>
-            <!-- SKYMAP CONSTELLATION WIDGET -->
-            <div class="is-mobile">
-                <h2 class="title is-2"> Sky Map </h2>
-                <div class="" id="skyMap">
-                    <div id=av-skymap>
-                        <!-- <a href="https://astroviewer.net/widgets/widgets/skymap.js">
-                            <img src="https://astroviewer.net/av/widgets/skymap-av4-widget.php?lon=-73.986&lat=40.748&deco=16399&lang=en&size=500" width="500" height="500">
-                        </a> -->
-                        <!-- <iframe id="skymap-iframe" src="https://astroviewer.net/av/widgets/skymap-av4-widget.php?lon=-73.986&amp;lat=40.748&amp;deco=16399&amp;lang=en&amp;size=600&amp;name=New%20York%20City&amp;tz=America%2FNew_York" width="600" height="690" sandbox="allow-scripts allow-popups"
-                            scrolling="no" style="overflow:hidden; border: 1px solid #ccc;"></iframe> -->
-                        <!-- <script>
-                            var avSkymapProperties = {
-                                location: {
-                                    lon: " + data.location.longitude + ",
-                                    lat: " + data.location.latitude + ",
-                                    name: 'anywhere',
-                                    tz: 'America/New_York'
-                                },
-                                deco: 16399,
-                                size: 600,
-                                lang: 'en'
-                            };
-                        </script> -->
-                    </div>
-                </div>
-            </div>
-            <!-- geolocation info API -->
-            <div class="is-mobile">
-                <div class="" id="astroInfo">
-                    <h2 class="title is-2"> Astro Info</h2>
-                    <div id="textarea" class="column">
-                        <ul id="geoList">
-                    </div>
-                </div>
-            </div>
-        </main>
+
+    <header>
+        <h1 class="title is-1">Stargazers</h1>
+    </header>
+    <!-- NASA IMAGE OR PHOTO CONTAINER -->
+    <div class="level" id="nasaImage">
+
     </div>
+    <main class="container">
+        <!-- INPUT AND SEARCH CONTAINER -->
+        <div class="is-mobile">
+            <!-- <h4 class="">Enter your city to gaze the stars...</h4> -->
+            <input id="userInput" class="" type="text" placeholder="see any city in the world...">
+            <span class="control">
+                <button id="searchBtn" class="button is-primary">Sky Map</button>
+                </span>
+        </div>
+
+
+        <!-- SKYMAP CONSTELLATION WIDGET -->
+        <div class="is-mobile">
+            <h2 id="" class="title is-2">Sky Map</h2>
+            <h3 id="skyMapTitle" class="title is-3">Dallas, Texas</h3>
+            <div class="" id="skyMap">
+                <div id=av-skymap>
+                    <iframe id="skymap-iframe" src="https://astroviewer.net/av/widgets/skymap-av4-widget.php?lon=-96.7968559&amp;lat=32.7762719" &deco="16399&amp;lang=en&amp;size=1000" width="1000" height="1000" sandbox="allow-scripts allow-popups" scrolling="no" style="overflow:hidden; border: 1px solid #ccc;"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns">
+
+            <!-- geolocation info API -->
+
+            <div class="column is-half">
+                <div id="astroInfo">
+                    <h2 id="" class="title is-2">Astro Data</h2>
+                    <h3 id="astroTitle" class="title is-3">Dallas, Texas</h3>
+                    <div id="textarea" class="">
+
+                        <ul id="geoList" style="background-color: rgba(0, 0, 0, 0.8);">
+                            <li> Sunrise 6:27 AM</li>
+                            <li> Sunset 8:37 PM</li>
+                            <li> Moonrise 6:47 AM</li>
+                            <li> Moonset 9:33 PM</li>
+                            <li> Sun Distance 152094773 km</li>
+                            <li> Moon Distance 394050 km</li>
+
+
+                        </ul>
+                    </div>
+                </div>
+                <div id="dailyAstroid">
+                    <h2 id="" class="title is-2">Daily Astroid </h2>
+                    <h3 id="astroidTitle" class="title is-3">Near Earth</h3>
+                    <div id="textarea2" class="">
+
+                        <ul id="astroidList" style="background-color: rgba(0, 0, 0, 0.8);">
+                            <!-- <li> Astroid Maximum Diameter: 293.7818964505</li>
+                            <li> Astroid Distance From Earth: 7182803.4045428288</li>
+                            <li> Astroid Potentially Hazardous:false</li>
+                            <li> Astroid is a Sentry Object: false</li> -->
+                        </ul>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IMAGE OF THE DAY API -->
+            <div class="column is-half">
+                <h2 class="title is-2">NASA</h2>
+                <h3 class="title is-3">Image of the Day</h3>
+                <div id="dailyContainer">
+                    <h4 id="dailyTitle" class="title is-4">Nasa Image of the Day</h4>
+
+                    <div id="dailyImgContainer">
+                        <!-- <img id="dailyImg" class=""> -->
+                    </div>
+                    <button id="didYouKnowBtn" class="button is-primary">Did You Know... </button>
+
+                    <button id="saveBtn" class="button is-primary">Save to Photo Gallery</button>
+                    <p id="dailyDesc"></p>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div id="" class="is-mobile">
+            <h2 class="title is-2"> Nasa Image Gallery</h2>
+
+            <div class="" id="galleryContainer">
+                <div id="gallery" class="columns">
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
     <!-- ---------- SCRIPTS ----------- -->
+
     <!-- jquery  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <!-- constellation widget -->
     <div id="widgetDiv">
         <!-- <script src="https://astroviewer.net/widgets/widgets/skymap.js"></script> -->
     </div>
+
     <!-- our javascript -->
     <script src="./Assets/script.js"></script>
 </body>
