@@ -182,7 +182,7 @@ function getGeoApi(city) {
             // handling showing just city and state for USA and just city and country for the rest of the world
             if (data.location.country === 'United States of America') {
                 $('#skyMapTitle').text(`${city}, ${data.location.state}`);
-                $('#astroTitle').text(`this is our ${city}, and the state is ${data.location.state}`);
+                $('#astroTitle').text(`${city}, ${data.location.state}`);
             } else {
                 $('#skyMapTitle').text(`${city}, ${data.location.country}`);
                 $('#astroTitle').text(`${city}, ${data.location.country}`);
