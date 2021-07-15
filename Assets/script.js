@@ -40,7 +40,7 @@ function getNasaVideoAPI() {
 //call NASA video function
 getNasaVideoAPI();
 
-// ------------------ NASA Astroids Near Earth API -------------------------------------------------------------------------------
+// ------------------ NASA Asteroids Near Earth API -------------------------------------------------------------------------------
 
 function getNasaAstroidAPI() {
     fetch(requestURLAstroidData)
@@ -48,27 +48,82 @@ function getNasaAstroidAPI() {
             return response.json();
         })
         .then(function(data) {
-            console.log('Fetch Response Nasa ASTROID API \n-------------');
+            console.log('Fetch Response Nasa ASTEROID API \n-------------');
             console.log(data);
-            var dailyAstroidList = data.near_earth_objects['2021-07-12']
+            var today = new Date()
+                // console.log(today)
+            var todayDate = `${today.getFullYear()}-0${today.getMonth() + 1}-${(today.getDate()) + 1}`
+                // JSON.stringify(todayDate);
+            console.log('string of today date ' + todayDate)
+                // console.log('year is: ' + today.getFullYear())
+                // console.log('month is: ' + today.getMonth())
+                // console.log('day is: ' + today.getDate())
+            var dailyAsteroidList = data.near_earth_objects[todayDate]
+            console.log(dailyAsteroidList + ' astroid list for today')
 
-            for (var i = 0; i < dailyAstroidList.length; i++) {
-                console.log(dailyAstroidList)
+            var asteroidDiaArr = [];
+            var asteroidMissArr = [];
+            var asteroidHazTrueArr = [];
+            var asteroidSentTrueArr = [];
 
-                var dailyAstroidDiameter = data.near_earth_objects['2021-07-12'][i].estimated_diameter.feet.estimated_diameter_max;
-                var dailyAstroidMissDistance = data.near_earth_objects['2021-07-12'][i].close_approach_data['0'].miss_distance.miles;
-                var dailyAstroidHazardous = data.near_earth_objects['2021-07-12'][i].is_potentially_hazardous_asteroid;
-                var dailyAstroidSentry = data.near_earth_objects['2021-07-12'][i].is_sentry_object;
+            for (var i = 0; i < dailyAsteroidList.length; i++) {
+                var dailyAsteroidDiaList = dailyAsteroidList[i].estimated_diameter.feet.estimated_diameter_max;
+                var dailyAsteroidMissList = dailyAsteroidList[i].close_approach_data['0'].miss_distance.miles;
+                var dailyAsteroidHazList = dailyAsteroidList[i].is_potentially_hazardous_asteroid;
+                var dailyAsteroidSentList = dailyAsteroidList[i].is_sentry_object;
 
-                console.log(dailyAstroidDiameter)
-                console.log(dailyAstroidMissDistance)
-                console.log(dailyAstroidHazardous)
-                console.log(dailyAstroidSentry)
+                asteroidDiaArr.push(dailyAsteroidDiaList)
+                asteroidMissArr.push(dailyAsteroidMissList)
+
+                if (dailyAsteroidHazList === true) {
+                    asteroidHazTrueArr.push(dailyAsteroidHazList)
+                }
+
+                if (dailyAsteroidSentList === true) {
+                    asteroidSentTrueArr.push(dailyAsteroidHazList)
+                }
             }
-            $('#astroidList').append("<li> Asteroid Maximum Diameter: " + dailyAstroidDiameter + "</li>");
-            $('#astroidList').append("<li> Asteroid Distance From Earth: " + dailyAstroidMissDistance + "</li>");
-            $('#astroidList').append("<li> Asteroid Potentially Hazardous:" + dailyAstroidHazardous + "</li>");
-            $('#astroidList').append("<li> Asteroid is a Sentry Object: " + dailyAstroidSentry + "</li>");
+
+            asteroidDiaArr.sort((a, b) => a - b)
+            for (var i = 1; i < asteroidDiaArr.length; i++) {
+                var leftPointer = i - 1;
+                var rightPointer = i;
+                var dailyAstroidDiameter = 0;
+                if (asteroidDiaArr[leftPointer] > asteroidDiaArr[rightPointer]) {
+                    dailyAstroidDiameter = asteroidDiaArr[leftPointer]
+                } else if ((asteroidDiaArr[leftPointer] < asteroidDiaArr[rightPointer])) {
+                    dailyAstroidDiameter = asteroidDiaArr[rightPointer]
+                }
+            }
+
+            asteroidMissArr.sort((a, b) => a - b)
+            for (var i = 1; i < asteroidMissArr.length; i++) {
+                var leftPointer = i - 1;
+                var rightPointer = i;
+                var dailyAstroidMissDistance = 0;
+                if (asteroidMissArr[leftPointer] < asteroidMissArr[rightPointer]) {
+                    dailyAstroidMissDistance = asteroidMissArr[leftPointer]
+                } else if ((asteroidMissArr[leftPointer] > asteroidMissArr[rightPointer])) {
+                    dailyAstroidMissDistance = asteroidMissArr[rightPointer]
+                }
+            }
+
+            if (asteroidHazTrueArr != null) {
+                var dailyAsteroidHazList = 'Yes!'
+            } else {
+                var dailyAsteroidHazList = 'Not Today'
+            }
+            if (asteroidSentTrueArr != null) {
+                var dailyAstroidSentList = 'Yes!'
+            } else {
+                var dailyAstroidSentList = 'Not Today'
+            }
+
+
+            $('#astroidList').append("<li> Today's Largest Asteroid: " + dailyAstroidDiameter + " feet</li>");
+            $('#astroidList').append("<li> Today's Closest Asteroid: " + dailyAstroidMissDistance + " miles</li>");
+            $('#astroidList').append("<li> Are Any Asteroids Hazardous?: " + dailyAsteroidHazList + "</li>");
+            $('#astroidList').append("<li>Are Any Asteroids Sentry? " + dailyAstroidSentList + "</li>");
 
             console.log(dailyAstroidDiameter + ' daily astroid')
 
